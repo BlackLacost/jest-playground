@@ -1,0 +1,14 @@
+{
+  "name": "basics",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "author": "Ilya Lisin <blacklacost@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.4.4"
+  }
+}

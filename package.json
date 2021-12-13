@@ -1,0 +1,14 @@
+{
+  "name": "jest-playground",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:basics": "npm run test -w basics"
+  },
+  "author": "Ilya Lisin <blacklacost@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "javascript-ninja/basics"
+  ]
+}
