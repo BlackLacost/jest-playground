@@ -1,0 +1,17 @@
+{
+  "name": "basics-ts",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.4",
+    "ts-jest": "^27.1.1",
+    "typescript": "^4.5.3"
+  },
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "author": "Ilya Lisin <blacklacost@gmail.com>",
+  "license": "MIT"
+}
