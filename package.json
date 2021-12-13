@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test:basics": "npm run test -w basics",
-    "test:basics-ts": "npm run test -w \"basics-ts\""
+    "test:basics-ts": "npm run test -w \"basics-ts\"",
+    "start:share": "npm start -w \"share-google-docs\""
   },
   "author": "Ilya Lisin <blacklacost@gmail.com>",
   "license": "MIT",
   "workspaces": [
     "javascript-ninja/basics",
-    "javascript-ninja/basics-ts"
+    "javascript-ninja/basics-ts",
+    "javascript-ninja/share-google-docs"
   ]
 }
