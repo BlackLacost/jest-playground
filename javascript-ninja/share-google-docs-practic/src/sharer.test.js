@@ -56,11 +56,12 @@ describe('Sharer', () => {
 
   it('works', async () => {})
 
+  // если оплатил но нету в списке -> добавить
+  // если оплатил но есть в списке -> ничего не делать
+  // если не оплатил и есть в списке -> ничего не делать
+  // если не оплатил и нету в списке -> ничего не делать
+
   describe('when person paid but is not in enrolled list', () => {
-    // если оплатил но нету в списке -> добавить
-    // если оплатил но есть в списке -> ничего не делать
-    // если не оплатил и есть в списке -> ничего не делать
-    // если не оплатил и нету в списке -> ничего не делать
     const EMAIL = 'some@email'
 
     beforeEach(() => {
@@ -125,6 +126,45 @@ describe('Sharer', () => {
 
       expect(consoleLogSpy).not.toHaveBeenCalledWith(
         expect.stringContaining(EMAIL),
+      )
+    })
+  })
+
+  describe('when person paid and is in enrolled list', () => {
+    const EMAIL = 'some@email'
+
+    beforeEach(() => {
+      mockLiqpayApi.mockImplementation((_, __, resolve) =>
+        resolve({
+          data: [
+            {
+              description: EXPECTED_DESCRIPTION,
+              order_id: `${EMAIL} /// Something`,
+              status: 'success',
+            },
+          ],
+        }),
+      )
+
+      mockGoogleDrivePermissionsList.mockResolvedValue({
+        data: { permissions: [{ emailAddress: EMAIL }] },
+      })
+    })
+
+    it('does not attempts to share with this email', async () => {
+      await shareDocumentWithStudents(FAKE_FILE_ID)
+    })
+
+    it('does not reports email if sharing fails', async () => {
+      const consoleLogSpy = jest.spyOn(console, 'log')
+      mockGoogleDrivePermissionsCreate.mockRejectedValue(
+        new Error('Unknow error'),
+      )
+
+      await shareDocumentWithStudents(FAKE_FILE_ID).catch(() => {})
+
+      expect(mockGoogleDrivePermissionsCreate).not.toHaveBeenCalledWith(
+        expect.objectContaining({ emailAddress: EMAIL }),
       )
     })
   })
