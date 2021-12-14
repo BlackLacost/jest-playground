@@ -42,6 +42,7 @@ module.exports = {
     await jwtClient.authorize()
     const drive = google.drive({ version: 'v3' })
 
+    console.log('reached here')
     const list = await drive.permissions.list({
       fileId,
       oauth_token: jwtClient.credentials.access_token,
