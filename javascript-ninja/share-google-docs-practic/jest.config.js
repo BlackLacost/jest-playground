@@ -3,5 +3,6 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageProvider: 'v8',
-  testTimeout: 20000,
+  testTimeout: 5000,
+  silent: true, // for silent console.log
 }
