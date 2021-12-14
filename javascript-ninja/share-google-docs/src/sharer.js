@@ -42,7 +42,6 @@ module.exports = {
     await jwtClient.authorize()
     const drive = google.drive({ version: 'v3' })
 
-    console.log('reached here')
     const list = await drive.permissions.list({
       fileId,
       oauth_token: jwtClient.credentials.access_token,
@@ -56,7 +55,6 @@ module.exports = {
         p.order_id.includes(' /// ')
       ) {
         const mail = p.order_id.split(' /// ')[0].trim()
-        console.log(mail)
 
         if (p.status === 'success' && !enrolledEmails.includes(mail)) {
           await drive.permissions.create({
