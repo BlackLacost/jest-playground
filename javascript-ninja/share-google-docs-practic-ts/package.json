@@ -1,0 +1,32 @@
+{
+  "name": "share-google-docs-practic-ts",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlackLacost/jest-playground.git"
+  },
+  "author": "Ilya Lisin <blacklacost@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BlackLacost/jest-playground/issues"
+  },
+  "homepage": "https://github.com/BlackLacost/jest-playground#readme",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "googleapis": "^92.0.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.4",
+    "ts-jest": "^27.1.1",
+    "typescript": "^4.5.4"
+  }
+}
