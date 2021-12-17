@@ -16,6 +16,7 @@
     "javascript-ninja/basics-ts",
     "javascript-ninja/share-google-docs",
     "javascript-ninja/share-google-docs-practic",
-    "javascript-ninja/share-google-docs-practic-ts"
+    "javascript-ninja/share-google-docs-practic-ts",
+    "axios-tor-interceptor"
   ]
 }
